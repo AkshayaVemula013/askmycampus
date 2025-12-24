@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ask My Campus</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<h1>Ask My Campus</h1>
+
+<!-- LOGIN -->
+<div id="loginDiv" class="card">
+  <h2>Student Login</h2>
+  <input id="name" placeholder="Name">
+  <input id="roll" placeholder="Roll / Reg No">
+  <select id="type">
+    <option value="">Dayscholar / Hosteller</option>
+    <option>Dayscholar</option>
+    <option>Hosteller</option>
+  </select>
+  <input id="room" placeholder="Room No (if hosteller)">
+  <input id="email" placeholder="Email">
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- OPTION -->
+<div id="choiceDiv" class="card" style="display:none;">
+  <h2>Select Option</h2>
+  <button onclick="showQuery()">Query</button>
+  <button onclick="showComplaint()">Complaint</button>
+</div>
+
+<!-- QUERY -->
+<div id="queryDiv" class="card" style="display:none;">
+  <h2>Student Query</h2>
+  <select id="queryType">
+    <option value="">Select Query</option>
+    <option>Semester</option>
+    <option>Exam Date</option>
+    <option>Fees</option>
+    <option>Hostel</option>
+    <option>Other</option>
+  </select>
+  <button onclick="startQuery()">Ask AI</button>
+
+  <div id="queryChat" class="chat-box"></div>
+
+  <input id="queryInput" placeholder="Type your reply..." style="display:none;">
+  <button id="sendQuery" onclick="sendQuery()" style="display:none;">Send</button>
+</div>
+
+<!-- COMPLAINT -->
+<div id="complaintDiv" class="card" style="display:none;">
+  <h2>Raise Complaint</h2>
+  <textarea id="complaintText" placeholder="Describe your complaint"></textarea>
+  <input type="file">
+  <button onclick="submitComplaint()">Submit</button>
+
+  <div id="complaintChat" class="chat-box"></div>
+
+  <input id="complaintInput" placeholder="Type your reply..." style="display:none;">
+  <button id="sendComplaint" onclick="sendComplaint()" style="display:none;">Send</button>
+</div>
+
+</body>
+</html>
